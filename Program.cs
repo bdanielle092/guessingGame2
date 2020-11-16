@@ -16,9 +16,14 @@ namespace guessingGame2
                 Console.WriteLine("guess again ?");
                 guess = int.Parse(Console.ReadLine());
                 Usertry++;
+              
             }
-                Console.WriteLine("You got it right!");
-            
+              if(Usertry == 4){
+                  Console.WriteLine("Better luck next time");
+
+              }else{
+                  Console.WriteLine("Awesome You got it right!");
+              }
         }
     }
 }

@@ -7,10 +7,15 @@ namespace guessingGame2
         static void Main(string[] args)
         {
             
-           
+           int secretNumber = 43;
             Console.WriteLine("What's the secret Number ?");
-            string guess = Console.ReadLine();
-            Console.WriteLine(guess);
+           int guess = int.Parse(Console.ReadLine());
+            // Console.WriteLine(guess);
+            while(guess != secretNumber ){
+                Console.WriteLine("guess again ?");
+                guess = int.Parse(Console.ReadLine());
+            }
+                Console.WriteLine("You got it right!");
             
         }
     }

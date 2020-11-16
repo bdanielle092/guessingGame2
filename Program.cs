@@ -6,13 +6,14 @@ namespace guessingGame2
     {
         static void Main(string[] args)
         {
-            // var called secretNumber which is a number between 1 - 100
+            // we are assigning the variables. int in the type. secrestNumber is the variable and we are assigning class its Random().Next()
+            // secretNumber  = a random number between 1 - 100
            int secretNumber = new Random().Next(1, 101);
-           // difficulty level
+           // difficulty level = 0
            int difficultyLevel = 0;
-           // userTries
+           // userTries = 0 
            int userTries = 0;
-// used a switch to have user pick a difficulty level 
+        // used a switch to have user pick a difficulty level 
          while (difficultyLevel == 0)
          {
              Console.WriteLine("Select a difficulty:");
@@ -20,7 +21,7 @@ namespace guessingGame2
              Console.WriteLine("2) Medium - six guesses");
              Console.WriteLine("3) Hard - four guesses");
              Console.WriteLine("4) Cheater - infinite");
-
+// this allows the user to pick a level
              difficultyLevel = int.Parse(Console.ReadLine());
              switch (difficultyLevel)
              {
@@ -48,11 +49,11 @@ namespace guessingGame2
             Console.WriteLine("What's the secret Number ?");
             //display  a prompt to guess
            int guess = int.Parse(Console.ReadLine());
-            // useing a while loop to guess the secretNumber and the amount to time a user has guesseds
+            // using a while loop to guess the secretNumber and the amount to time a user has guesseds
             while(guess != secretNumber && userTries != 1){
 
                 Console.WriteLine("guess again ?");
-                //if else statement for guessing to low or high
+                //if else statement for guessing if the number is  to low or to high
                 if(guess < secretNumber){
                     Console.WriteLine("");
                     Console.WriteLine("You guess is to low");

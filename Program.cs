@@ -8,18 +8,21 @@ namespace guessingGame2
         {
             // var called secretNumber which is a number between 1 - 100
            int secretNumber = new Random().Next(1, 101);
-           int difficultyMode = 0;
+           // difficulty level
+           int difficultyLevel = 0;
+           // userTries
            int userTries = 0;
-
-         while (difficultyMode == 0)
+// used a switch to have user pick a difficulty level 
+         while (difficultyLevel == 0)
          {
              Console.WriteLine("Select a difficulty:");
              Console.WriteLine("1) Easy - eight guesses");
              Console.WriteLine("2) Medium - six guesses");
              Console.WriteLine("3) Hard - four guesses");
+             Console.WriteLine("4) Cheater - infinite");
 
-             difficultyMode = int.Parse(Console.ReadLine());
-             switch (difficultyMode)
+             difficultyLevel = int.Parse(Console.ReadLine());
+             switch (difficultyLevel)
              {
                  case 1:
                  userTries = 8;
@@ -30,8 +33,12 @@ namespace guessingGame2
                  case 3: 
                  userTries = 4;
                  break;
+                 case 4:
+                 userTries = int.MaxValue;
+                 break;
                  default:
-                 userTries = 8;
+                 Console.WriteLine("Must select 1, 2, 3 or 4");
+                 difficultyLevel = int.Parse(Console.ReadLine());
                  break;
              }
 
